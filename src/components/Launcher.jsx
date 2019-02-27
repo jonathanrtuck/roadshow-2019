@@ -249,11 +249,16 @@ export default connect(
           position: 'center',
           size: 'cover',
         },
+        bottom: 0,
         color: theme.palette.primary.contrastText,
         display: 'flex',
         flex: {
           direction: 'column',
         },
+        left: 0,
+        position: 'fixed',
+        right: 0,
+        top: 0,
       },
       tile: {
         background: {

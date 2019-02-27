@@ -20,7 +20,12 @@ import { Slide, withStyles } from '@material-ui/core';
  */
 const App = ({ view }) => (
   <main>
-    <Slide direction="right" in={view === 'launcher'} timeout={250}>
+    <Slide
+      appear={false}
+      direction="right"
+      in={view === 'launcher'}
+      timeout={250}
+    >
       <Launcher />
     </Slide>
     <Slide direction="left" in={view === 'analytics'}>
