@@ -1,56 +1,11 @@
 import background from 'images/background.png';
 import { ButtonBase, Grid, Typography, withStyles } from '@material-ui/core';
-import classnames from 'classnames';
 import { connect } from 'react-redux';
-import dx from 'images/dx.png';
-import {
-  faChartPie,
-  faCloud,
-  faRobot,
-  faUserCircle,
-} from '@fortawesome/pro-solid-svg-icons';
-import { faPlayCircle } from '@fortawesome/pro-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import React from 'react';
+import sections from 'constants/sections';
 import { VIEW_UPDATE } from 'store/action-types';
-
-/**
- * @constant
- * @type {object[]}
- */
-const cards = [
-  {
-    icon: dx,
-    id: 'services',
-    label: 'Our Digital<br />Experiences Services',
-  },
-  {
-    icon: faUserCircle,
-    id: 'profile',
-    label: 'Employee Profile<br />Redesign Project',
-  },
-  {
-    icon: faCloud,
-    id: 'search',
-    label: 'Next Gen<br />Search',
-  },
-  {
-    icon: faRobot,
-    id: 'chatbot',
-    label: 'Chat Bot -<br />Proof of Concept',
-  },
-  {
-    icon: faChartPie,
-    id: 'analytics',
-    label: 'Google<br />Analytics',
-  },
-  {
-    icon: faPlayCircle,
-    id: 'recordings',
-    label: 'Session Recordings<br />from Today',
-  },
-];
 
 /**
  * @constant
@@ -58,8 +13,8 @@ const cards = [
  * @param {object} props
  * @returns {ReactElement}
  */
-const Launcher = ({ classes, className, theme, updateView }) => (
-  <nav className={classnames(classes.root, className)}>
+const Launcher = ({ classes, theme, updateView }) => (
+  <nav className={classes.root}>
     <header className={classes.header}>
       <h1 className={classes.h1}>
         <svg
@@ -129,8 +84,8 @@ const Launcher = ({ classes, className, theme, updateView }) => (
       justify="center"
       spacing={theme.spacing.unit}
     >
-      {cards.map(({ icon, id, label }) => (
-        <Grid item key={id} xs={4}>
+      {sections.map(({ icon, id, label }) => (
+        <Grid item key={id} md={4} sm={6} xs={12}>
           <ButtonBase
             className={classes.tile}
             component="article"
@@ -163,13 +118,8 @@ const Launcher = ({ classes, className, theme, updateView }) => (
 
 Launcher.propTypes = {
   classes: PropTypes.objectOf(PropTypes.string).isRequired,
-  className: PropTypes.string,
   theme: PropTypes.objectOf(PropTypes.any).isRequired,
   updateView: PropTypes.func.isRequired,
-};
-
-Launcher.defaultProps = {
-  className: '',
 };
 
 /**
@@ -196,11 +146,16 @@ export default connect(
         margin: [[0, 'auto']],
         maxWidth: 1200,
         padding: {
-          bottom: 160,
           left: theme.spacing.unit,
           right: theme.spacing.unit,
         },
         width: '100%',
+
+        [theme.breakpoints.up('md')]: {
+          padding: {
+            bottom: 160,
+          },
+        },
       },
       h1: {
         display: 'inline-block',
@@ -208,26 +163,36 @@ export default connect(
         verticalAlign: 'middle',
       },
       h2: {
-        border: {
-          color: 'rgba(255, 255, 255, 0.5)',
-          style: 'solid',
-          width: [[0, 0, 0, 1]],
-        },
-        display: 'inline-block',
         font: {
-          size: '2.8rem',
+          size: '2rem',
           weight: 300,
         },
         lineHeight: 1,
         margin: {
-          bottom: 0,
           left: theme.spacing.unit,
-          top: 0,
-        },
-        padding: {
-          left: theme.spacing.unit * 2,
         },
         verticalAlign: -27,
+
+        [theme.breakpoints.up('sm')]: {
+          font: {
+            size: '2.8rem',
+          },
+        },
+
+        [theme.breakpoints.up('md')]: {
+          border: {
+            color: 'rgba(255, 255, 255, 0.5)',
+            style: 'solid',
+            width: [[0, 0, 0, 1]],
+          },
+          display: 'inline-block',
+          margin: {
+            left: theme.spacing.unit,
+          },
+          padding: {
+            left: theme.spacing.unit * 2,
+          },
+        },
       },
       header: {
         flex: {
@@ -241,6 +206,7 @@ export default connect(
         margin: {
           right: '0.3em',
         },
+        maxWidth: '100%',
         width: 320,
       },
       root: {
@@ -256,6 +222,8 @@ export default connect(
           direction: 'column',
         },
         left: 0,
+        overflow: 'auto',
+        WebkitOverflowScrolling: 'touch',
         position: 'fixed',
         right: 0,
         top: 0,
@@ -268,7 +236,7 @@ export default connect(
         flex: {
           direction: 'column',
         },
-        padding: theme.spacing.unit * 3,
+        padding: [[theme.spacing.unit * 3, 0]],
       },
       tile_icon: {
         margin: {
