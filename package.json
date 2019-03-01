@@ -50,11 +50,11 @@
     "node": ">=8.0.0"
   },
   "license": "UNLICENSED",
-  "name": "roadshow",
+  "name": "roadshow-2019",
+  "repository": "https://github.com/jonathanrtuck/roadshow-2019",
   "scripts": {
-    "dev": "webpack --debug --display-error-details --display-reasons --mode=development --progress",
-    "prod": "webpack --mode=production",
-    "watch": "webpack-dev-server --mode=development"
+    "build": "webpack --debug --display-error-details --display-reasons --mode=production --progress",
+    "develop": "webpack-dev-server --mode=development"
   },
-  "version": "0.0.1"
+  "version": "0.0.2"
 }
