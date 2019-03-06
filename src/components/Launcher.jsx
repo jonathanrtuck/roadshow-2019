@@ -157,11 +157,13 @@ export default connect(
           },
         },
       },
+
       h1: {
         display: 'inline-block',
         margin: 0,
         verticalAlign: 'middle',
       },
+
       h2: {
         font: {
           size: '2rem',
@@ -194,6 +196,7 @@ export default connect(
           },
         },
       },
+
       header: {
         flex: {
           grow: 0,
@@ -201,6 +204,7 @@ export default connect(
         },
         padding: theme.spacing.unit * 4,
       },
+
       logo: {
         fill: 'currentColor',
         margin: {
@@ -209,6 +213,7 @@ export default connect(
         maxWidth: '100%',
         width: 320,
       },
+
       root: {
         background: {
           image: `url(${background})`,
@@ -228,6 +233,7 @@ export default connect(
         right: 0,
         top: 0,
       },
+
       tile: {
         background: {
           color: 'rgba(255, 255, 255, 0.25)',
@@ -238,12 +244,14 @@ export default connect(
         },
         padding: [[theme.spacing.unit * 3, 0]],
       },
+
       tile_icon: {
         margin: {
           bottom: theme.spacing.unit * 3,
           top: theme.spacing.unit * 2,
         },
       },
+
       tile_image: {
         height: 64,
         margin: {
