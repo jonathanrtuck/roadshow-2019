@@ -1,16 +1,17 @@
-import Analytics from 'components/Analytics';
-import Chatbot from 'components/Chatbot';
+// import Analytics from 'components/Analytics';
+// import Chatbot from 'components/Chatbot';
 import dx from 'images/dx.png';
 import {
-  faChartPie,
+  // faChartPie,
   faCloud,
-  faRobot,
+  // faRobot,
   faUserCircle,
 } from '@fortawesome/pro-solid-svg-icons';
-import { faPlayCircle } from '@fortawesome/pro-regular-svg-icons';
+// import { faPlayCircle } from '@fortawesome/pro-regular-svg-icons';
+import Ngmp from 'components/Ngmp';
 import Profile from 'components/Profile';
 import React from 'react';
-import Recordings from 'components/Recordings';
+// import Recordings from 'components/Recordings';
 import Search from 'components/Search';
 import Services from 'components/Services';
 
@@ -28,7 +29,7 @@ export default [
     component: <Profile />,
     icon: faUserCircle,
     id: 'profile',
-    label: 'Employee Profile<br />Redesign Project',
+    label: 'Employee<br />Profile',
   },
   {
     component: <Search />,
@@ -36,6 +37,13 @@ export default [
     id: 'search',
     label: 'Next Gen<br />Search',
   },
+  {
+    component: <Ngmp />,
+    icon: faCloud,
+    id: 'ngmp',
+    label: 'Next Gen<br />MyPepsiCo',
+  },
+  /*
   {
     component: <Chatbot />,
     icon: faRobot,
@@ -54,4 +62,5 @@ export default [
     id: 'recordings',
     label: 'Session Recordings<br />from Today',
   },
+  */
 ];

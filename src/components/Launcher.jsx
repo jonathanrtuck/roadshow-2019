@@ -85,7 +85,7 @@ const Launcher = ({ classes, theme, updateView }) => (
       spacing={theme.spacing.unit}
     >
       {sections.map(({ icon, id, label }) => (
-        <Grid item key={id} md={4} sm={6} xs={12}>
+        <Grid item key={id} sm={6} xs={12}>
           <ButtonBase
             className={classes.tile}
             component="article"
@@ -144,7 +144,7 @@ export default connect(
           shrink: 0,
         },
         margin: [[0, 'auto']],
-        maxWidth: 1200,
+        maxWidth: theme.breakpoints.values.md,
         padding: {
           left: theme.spacing.unit,
           right: theme.spacing.unit,
