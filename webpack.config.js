@@ -53,7 +53,7 @@ module.exports = {
         useShortDoctype: true,
       },
       template: path.resolve(__dirname, 'public/index.html'),
-      title: 'roadshow',
+      title: 'roadshow-2019',
     }),
   ],
   resolve: {
