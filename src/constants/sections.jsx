@@ -1,18 +1,7 @@
-// import Analytics from 'components/Analytics';
-// import Chatbot from 'components/Chatbot';
 import dx from 'images/dx.png';
-import {
-  // faChartPie,
-  faCloud,
-  // faRobot,
-  faUserCircle,
-} from '@fortawesome/pro-solid-svg-icons';
-// import { faPlayCircle } from '@fortawesome/pro-regular-svg-icons';
+import { faIdCard } from '@fortawesome/pro-solid-svg-icons';
 import Ngmp from 'components/Ngmp';
-import Profile from 'components/Profile';
 import React from 'react';
-// import Recordings from 'components/Recordings';
-import Search from 'components/Search';
 import Services from 'components/Services';
 
 /**
@@ -20,28 +9,16 @@ import Services from 'components/Services';
  */
 export default [
   {
+    component: <Ngmp />,
+    icon: faIdCard,
+    id: 'ngmp',
+    label: 'Next Gen<br />Employee Experience',
+  },
+  {
     component: <Services />,
     icon: dx,
     id: 'services',
-    label: 'Our Digital<br />Experiences Services',
-  },
-  {
-    component: <Profile />,
-    icon: faUserCircle,
-    id: 'profile',
-    label: 'Employee<br />Profile',
-  },
-  {
-    component: <Search />,
-    icon: faCloud,
-    id: 'search',
-    label: 'Next Gen<br />Search',
-  },
-  {
-    component: <Ngmp />,
-    icon: faCloud,
-    id: 'ngmp',
-    label: 'Next Gen<br />MyPepsiCo',
+    label: 'Next Gen<br />Digital Experience Platform',
   },
   /*
   {

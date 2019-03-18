@@ -10,6 +10,13 @@ import { createMuiTheme } from '@material-ui/core';
  * @type {object}
  */
 export default createMuiTheme({
+  palette: {
+    primary: {
+      dark: 'rgb(0, 110, 180)',
+      light: 'rgb(40, 190, 240)',
+      main: 'rgb(1, 137, 180)',
+    },
+  },
   typography: {
     fontFamily: 'Lato, sans-serif',
     useNextVariants: true,

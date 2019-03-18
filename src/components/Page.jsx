@@ -1,6 +1,13 @@
+import {
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  Typography,
+  withStyles,
+} from '@material-ui/core';
 import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
-import { Card, CardContent, Typography, withStyles } from '@material-ui/core';
 
 /**
  * @constant
@@ -8,7 +15,7 @@ import { Card, CardContent, Typography, withStyles } from '@material-ui/core';
  * @param {object} props
  * @returns {ReactElement}
  */
-const Page = ({ classes, content, image, title }) => (
+const Page = ({ classes, content, image, link, title }) => (
   <Fragment>
     <header
       className={classes.header}
@@ -26,6 +33,13 @@ const Page = ({ classes, content, image, title }) => (
         </Typography>
         {content}
       </CardContent>
+      {link && (
+        <CardActions>
+          <Button color="primary" href={link} size="medium" target="_blank">
+            See Demo
+          </Button>
+        </CardActions>
+      )}
     </Card>
   </Fragment>
 );
@@ -34,7 +48,12 @@ Page.propTypes = {
   classes: PropTypes.objectOf(PropTypes.string).isRequired,
   content: PropTypes.element.isRequired,
   image: PropTypes.string.isRequired,
+  link: PropTypes.string,
   title: PropTypes.string.isRequired,
+};
+
+Page.defaultProps = {
+  link: '',
 };
 
 /**

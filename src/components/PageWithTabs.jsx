@@ -26,7 +26,7 @@ class PageWithTabs extends Component {
     /**
      * @constant
      */
-    const { classes, description, image, tabs, title } = this.props;
+    const { classes, description, image, link, tabs, title } = this.props;
     /**
      * @constant
      */
@@ -51,9 +51,10 @@ class PageWithTabs extends Component {
               <Typography
                 align="center"
                 className={classes.header_description}
-                variant="subtitle1"
+                variant="body1"
               >
                 {description}
+                {link}
               </Typography>
             )}
           </div>
@@ -70,9 +71,11 @@ class PageWithTabs extends Component {
             <Tab key={label} label={label} />
           ))}
         </Tabs>
-        {tabs.map(({ content }, i) =>
+        {tabs.map(({ content, label }, i) =>
           tabIndex === i ? (
-            <section className={classes.section}>{content}</section>
+            <section className={classes.section} key={label}>
+              {content}
+            </section>
           ) : null
         )}
       </Fragment>
@@ -84,6 +87,7 @@ PageWithTabs.propTypes = {
   classes: PropTypes.objectOf(PropTypes.string).isRequired,
   description: PropTypes.string,
   image: PropTypes.string.isRequired,
+  link: PropTypes.string,
   tabs: PropTypes.arrayOf(
     PropTypes.shape({
       content: PropTypes.element.isRequired,
@@ -95,6 +99,7 @@ PageWithTabs.propTypes = {
 
 PageWithTabs.defaultProps = {
   description: '',
+  link: '',
 };
 
 /**
@@ -113,7 +118,7 @@ export default withStyles((theme) => ({
 
   header_content: {
     background: {
-      color: theme.palette.background.paper,
+      color: 'rgba(255, 255, 255, 0.95)',
     },
     padding: theme.spacing.unit * 4,
 
