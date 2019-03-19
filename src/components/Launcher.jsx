@@ -73,7 +73,7 @@ const Launcher = ({ classes, theme, updateView }) => (
         </svg>
       </h1>
       <Typography className={classes.h2} color="inherit" component="h2">
-        Unified Web & Digital Experience Solutions
+        Digital Experience Solutions
       </Typography>
     </header>
     <Grid

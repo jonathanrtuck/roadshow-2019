@@ -40,7 +40,7 @@ const Ngmp = ({ classes }) => (
             </Typography>
           </div>
         ),
-        label: 'MyPepsiCo',
+        label: 'Next Gen MyPepsiCo',
       },
       {
         content: (
@@ -67,7 +67,7 @@ const Ngmp = ({ classes }) => (
             />
           </div>
         ),
-        label: 'Search',
+        label: 'Next Gen Search',
       },
       {
         content: (
@@ -98,7 +98,7 @@ const Ngmp = ({ classes }) => (
             </Typography>
           </div>
         ),
-        label: 'User Profiles',
+        label: 'Next Gen User Profiles',
       },
     ]}
     title="Next Gen Employee Experience"
