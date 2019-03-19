@@ -84,13 +84,16 @@ const Launcher = ({ classes, theme, updateView }) => (
       justify="center"
       spacing={theme.spacing.unit}
     >
-      {sections.map(({ icon, id, label }) => (
+      {sections.map(({ href, icon, id, label }) => (
         <Grid item key={id} sm={6} xs={12}>
           <ButtonBase
             className={classes.tile}
-            component="article"
+            component={href ? 'a' : 'article'}
+            href={href}
             onClick={() => {
-              updateView(id);
+              if (!href) {
+                updateView(id);
+              }
             }}
           >
             {typeof icon === 'object' ? (

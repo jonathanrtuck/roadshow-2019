@@ -32,6 +32,7 @@ export default withStyles((theme) => ({
     bottom: 0,
     left: 0,
     overflow: 'auto',
+    WebkitOverflowScrolling: 'touch',
     position: 'fixed',
     right: 0,
     top: 0,

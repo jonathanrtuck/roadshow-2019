@@ -1,5 +1,5 @@
 import dx from 'images/dx.png';
-import { faIdCard } from '@fortawesome/pro-solid-svg-icons';
+import { faComment, faIdCard } from '@fortawesome/pro-solid-svg-icons';
 import Ngmp from 'components/Ngmp';
 import React from 'react';
 import Services from 'components/Services';
@@ -19,6 +19,13 @@ export default [
     icon: dx,
     id: 'services',
     label: 'Next Gen<br />Digital Experience Platform',
+  },
+  {
+    href:
+      'https://forms.office.com/Pages/ResponsePage.aspx?id=lTLMQg7NnES5jlzltWDB0zpVKts4PclKpVVo48B70-BUN0NBWDhTVVc0TkpWRVVFNU1SRUpFWUlYWS4u',
+    icon: faComment,
+    id: 'contact',
+    label: 'Contact Us',
   },
   /*
   {

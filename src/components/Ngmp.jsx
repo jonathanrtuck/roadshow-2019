@@ -1,6 +1,7 @@
 import Button from 'components/Button';
 import classnames from 'classnames';
 import hero from 'images/hero_profile_graphic.jpg';
+import ngmp from 'images/roadshow_mypepsicoNG_graphic.jpg';
 import PageWithTabs from 'components/PageWithTabs';
 import profile from 'images/profile_graphic.jpg';
 import PropTypes from 'prop-types';
@@ -15,13 +16,7 @@ import { Typography, withStyles } from '@material-ui/core';
  */
 const Ngmp = ({ classes }) => (
   <PageWithTabs
-    description="
-      The average employee spends 19% of their work day searching for word docs,
-      excel spreadsheets, power points, basically, for information. Our past
-      generation ways of sharing and finding information is transitioning to
-      take advantage of new technologies to build a world class intranet. This
-      is MyPepsiCo Next Gen… the Next Generation of MyPepsico.
-    "
+    description="Simplifying the employee’s work day."
     image={hero}
     tabs={[
       {
@@ -29,13 +24,28 @@ const Ngmp = ({ classes }) => (
           <div className={classes.container}>
             <img
               alt=""
-              className={classnames(classes.image, classes.left)}
-              src={profile}
+              className={classnames(classes.media, classes.left)}
+              src={ngmp}
             />
             <Typography component="div" variant="body1">
-              <p>Content and user first design</p>
+              <p>
+                We have redesigned the MyPepsiCo intranet portal with a renewed
+                focus on simplified content creation and better content
+                findability. To accomplish this we have:
+              </p>
               <ul>
-                <li>Focus on content and you will fix findability</li>
+                <li>
+                  Designed new, more scalable organizational patterns for
+                  content to improve way finding.
+                </li>
+                <li>
+                  Increased guidance and governance around good content writing
+                  practices to aid in search relevance
+                </li>
+                <li>
+                  Simplified content creation for authors by making web content
+                  management (WCM) functions easily accessible and intuitive
+                </li>
               </ul>
             </Typography>
           </div>
@@ -47,8 +57,9 @@ const Ngmp = ({ classes }) => (
           <div className={classes.container}>
             <Typography component="div" variant="body1">
               <p>
-                Google Cloud Search is almost here. It brings Google’s latest
-                and greatest search capabilities to the enterprise.
+                To continue the play on better content findability through
+                search we are upgrading to Google Cloud Search, which brings
+                Google’s latest secured search capabilities to the enterprise.
               </p>
               <ul>
                 <li>Artificial intelligence</li>
@@ -62,7 +73,7 @@ const Ngmp = ({ classes }) => (
             </Typography>
             <img
               alt=""
-              className={classnames(classes.image, classes.right)}
+              className={classnames(classes.media, classes.right)}
               src={profile}
             />
           </div>
@@ -74,21 +85,28 @@ const Ngmp = ({ classes }) => (
           <div className={classes.container}>
             <img
               alt=""
-              className={classnames(classes.image, classes.left)}
+              className={classnames(classes.media, classes.left)}
               src={profile}
             />
             <Typography component="div" variant="body1">
               <p>
-                We used user centered design and design thinking to “rethink”
-                the profile. We came up with a pretty amazing concept that’s not
-                only valuable for other people looking for you, but valuable for
-                you. The goal is to bring the information to you vs making you
-                go find it. Think “LinkedIn” for the enterprise. Giving you the
-                tools to manage your brand and identity within PepsiCo while
-                using that data and integrations with other systems to recommend
-                new roles, relent training and course, and people like you to
-                build your network.
+                We recently used user centered design and design thinking
+                techniques to “rethink” the employee profile. The resulting
+                designs strive to:
               </p>
+              <ul>
+                <li>
+                  Clean up the profile landscape - help the user to understand
+                  how all their different profile instances relate to each other
+                </li>
+                <li>
+                  Improve the completeness and accuracy of profile information
+                </li>
+                <li>
+                  Make a user’s profile just as valuable to them as it is to
+                  other people
+                </li>
+              </ul>
               <Button
                 className={classes.button}
                 href="https://cloudsearch.google.com/cloudsearch/search"
@@ -123,7 +141,13 @@ export default withStyles((theme) => ({
     display: 'flex',
   },
 
-  image: {
+  left: {
+    margin: {
+      right: theme.spacing.unit * 3,
+    },
+  },
+
+  media: {
     display: 'block',
     flex: {
       grow: 0,
@@ -133,12 +157,6 @@ export default withStyles((theme) => ({
       bottom: theme.spacing.unit * 3,
       left: 'auto',
       right: 'auto',
-    },
-  },
-
-  left: {
-    margin: {
-      right: theme.spacing.unit * 3,
     },
   },
 

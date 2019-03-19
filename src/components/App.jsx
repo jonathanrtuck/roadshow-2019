@@ -18,11 +18,14 @@ const App = ({ view }) => (
     <Slide appear={false} direction="right" in={view === 'launcher'}>
       <Launcher />
     </Slide>
-    {sections.map(({ component, id }) => (
-      <Slide direction="left" in={view === id} key={id}>
-        <Section>{component}</Section>
-      </Slide>
-    ))}
+    {sections.map(
+      ({ component, id }) =>
+        component && (
+          <Slide direction="left" in={view === id} key={id}>
+            <Section>{component}</Section>
+          </Slide>
+        )
+    )}
   </main>
 );
 
