@@ -1,5 +1,6 @@
 import Button from 'components/Button';
 import classnames from 'classnames';
+import gcs from 'images/gcs.png';
 import hero from 'images/hero_profile_graphic.jpg';
 import ngmp from 'images/roadshow_mypepsicoNG_graphic.jpg';
 import PageWithTabs from 'components/PageWithTabs';
@@ -16,7 +17,11 @@ import { Typography, withStyles } from '@material-ui/core';
  */
 const Ngmp = ({ classes }) => (
   <PageWithTabs
-    description="Simplifying the employee’s work day."
+    description="
+      We are using User Centric design principles and new technology to design
+      and deliver the next generation of employee productivity and engagement
+      solutions.
+    "
     image={hero}
     tabs={[
       {
@@ -24,27 +29,24 @@ const Ngmp = ({ classes }) => (
           <div className={classes.container}>
             <img
               alt=""
-              className={classnames(classes.media, classes.left)}
+              className={classnames(classes.left, classes.media)}
               src={ngmp}
             />
             <Typography component="div" variant="body1">
               <p>
                 We have redesigned the MyPepsiCo intranet portal with a renewed
                 focus on simplified content creation and better content
-                findability. To accomplish this we have:
+                findability.
               </p>
               <ul>
                 <li>
-                  Designed new, more scalable organizational patterns for
-                  content to improve way finding.
+                  Scalable organizational patterns for content to improve way
+                  finding
                 </li>
+                <li>Simplified content creation for authors</li>
                 <li>
-                  Increased guidance and governance around good content writing
-                  practices to aid in search relevance
-                </li>
-                <li>
-                  Simplified content creation for authors by making web content
-                  management (WCM) functions easily accessible and intuitive
+                  We are working with Global Internal Communications and HR to
+                  roll out MyPepsiCo Next Gen to all associates in 2019
                 </li>
               </ul>
             </Typography>
@@ -62,19 +64,23 @@ const Ngmp = ({ classes }) => (
                 Google’s latest secured search capabilities to the enterprise.
               </p>
               <ul>
-                <li>Artificial intelligence</li>
+                <li>Artificial Intelligence</li>
                 <li>Natural Language Process</li>
-                <li>Personalized and contextual search</li>
+                <li>Personalized and Contextual Search</li>
                 <li>New Data Sources Like O365 and Service Now</li>
+                <li>Intelligent Auto-tagging</li>
               </ul>
-              <Button className={classes.button} href="">
+              <Button
+                className={classes.button}
+                href="https://cloudsearch.google.com/cloudsearch/search"
+              >
                 Launch The Demo
               </Button>
             </Typography>
             <img
               alt=""
-              className={classnames(classes.media, classes.right)}
-              src={profile}
+              className={classnames(classes.right, classes.media)}
+              src={gcs}
             />
           </div>
         ),
@@ -85,34 +91,30 @@ const Ngmp = ({ classes }) => (
           <div className={classes.container}>
             <img
               alt=""
-              className={classnames(classes.media, classes.left)}
+              className={classnames(classes.left, classes.media)}
               src={profile}
             />
             <Typography component="div" variant="body1">
               <p>
-                We recently used user centered design and design thinking
-                techniques to “rethink” the employee profile. The resulting
-                designs strive to:
+                We started with research and understanding, competitive
+                analysis, broad user surveys, and a design thinking workshop
+                where our participants “designed their perfect profile”. We
+                learned that they want:
               </p>
               <ul>
                 <li>
-                  Clean up the profile landscape - help the user to understand
-                  how all their different profile instances relate to each other
+                  A comprehensive one-stop shop for user profile information
                 </li>
                 <li>
-                  Improve the completeness and accuracy of profile information
+                  A LinkedIn style features to better represent their PepsiCo
+                  experiences and skill (experience, endorsements, skills)
                 </li>
                 <li>
-                  Make a user’s profile just as valuable to them as it is to
-                  other people
+                  A unified experience that aggregates personalized information
+                  from systems like MyHR, PepsiCo University, and PepsiCoJobs
                 </li>
+                <li>Coming Q3 2019</li>
               </ul>
-              <Button
-                className={classes.button}
-                href="https://cloudsearch.google.com/cloudsearch/search"
-              >
-                Launch The Demo
-              </Button>
             </Typography>
           </div>
         ),
@@ -142,9 +144,7 @@ export default withStyles((theme) => ({
   },
 
   left: {
-    margin: {
-      right: theme.spacing.unit * 3,
-    },
+    marginRight: theme.spacing.unit * 3,
   },
 
   media: {
@@ -153,16 +153,10 @@ export default withStyles((theme) => ({
       grow: 0,
       shrink: 0,
     },
-    margin: {
-      bottom: theme.spacing.unit * 3,
-      left: 'auto',
-      right: 'auto',
-    },
+    marginBottom: theme.spacing.unit * 3,
   },
 
   right: {
-    margin: {
-      left: theme.spacing.unit * 3,
-    },
+    marginLeft: theme.spacing.unit * 3,
   },
 }))(Ngmp);

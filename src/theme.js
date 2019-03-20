@@ -18,6 +18,7 @@ export default createMuiTheme({
     },
   },
   typography: {
+    fontSize: 16,
     fontFamily: 'Lato, sans-serif',
     useNextVariants: true,
   },

@@ -1,10 +1,12 @@
 import accelerate from 'images/roadshow_DXP_graphic_1.png';
 import Button from 'components/Button';
 import classnames from 'classnames';
-import hero from 'images/hero_2.jpg';
+import generator from 'images/roadshow_campaign_graphic.jpg';
+import hero from 'images/roadshow_dxp_graphic_2.jpg';
 import PageWithTabs from 'components/PageWithTabs';
 import PropTypes from 'prop-types';
 import React from 'react';
+import snacks from 'images/roadshow_snacks2you_graphic.jpg';
 import { Typography, withStyles } from '@material-ui/core';
 
 /**
@@ -16,7 +18,7 @@ import { Typography, withStyles } from '@material-ui/core';
 const Services = ({ classes }) => (
   <PageWithTabs
     description="
-      Our DXP provides best of breed modern digital technologies to delivery rich
+      Our DXP provides best-of-breed modern digital technologies to delivery rich
       and engaging user experiences.
     "
     image={hero}
@@ -49,6 +51,11 @@ const Services = ({ classes }) => (
       {
         content: (
           <div className={classes.container}>
+            <img
+              alt=""
+              className={classnames(classes.left, classes.media)}
+              src={generator}
+            />
             <Typography component="div" variant="body1">
               <p>
                 New social platforms and changing consumer behaviors are
@@ -75,28 +82,44 @@ const Services = ({ classes }) => (
                   user’s journey
                 </li>
               </ul>
+              <Button href="https://dmp-pepsico-dev.azurewebsites.net/admin/">
+                Launch Demo
+              </Button>
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <p>B004TBLSKW,B009PTZW9Q,B009PTZVUQ,B004TBRSB0,B00RXIWRBW</p>
+              <Button href="https://dmp-smartads-dev.azureedge.net/democheetoscampaign">
+                Launch Site
+              </Button>
             </Typography>
-            <video
-              className={classnames(classes.media, classes.right)}
-              src=""
-            />
           </div>
         ),
-        label: 'Self Service Campaign Generator',
+        label: 'Self-Service Campaign Generator',
       },
       {
         content: (
-          <Typography component="div" variant="body1">
-            <ol>
-              <li>
+          <div className={classes.container}>
+            <Typography component="div" variant="body1">
+              <p>
                 Snack2U had a challenge for us. Can we make it easier to reorder
                 products through our Snacks2 you ecommerce platform.
-              </li>
-            </ol>
-            <Button href="">Launch Demo</Button>
-          </Typography>
+              </p>
+              <Button href="http://localhost/barcode-scanner/dist/">
+                Launch The Demo
+              </Button>
+            </Typography>
+            <img
+              alt=""
+              className={classnames(classes.right, classes.media)}
+              src={snacks}
+            />
+          </div>
         ),
-        label: 'Innovative',
+        label: 'Snack2U Mobile Ordering',
       },
     ]}
     title="Digital Experience Platform (DXP)"
@@ -118,13 +141,12 @@ export default withStyles((theme) => ({
   },
 
   container: {
+    alignItems: 'flex-start',
     display: 'flex',
   },
 
   left: {
-    margin: {
-      right: theme.spacing.unit * 3,
-    },
+    marginRight: theme.spacing.unit * 3,
   },
 
   media: {
@@ -133,16 +155,10 @@ export default withStyles((theme) => ({
       grow: 0,
       shrink: 0,
     },
-    margin: {
-      bottom: theme.spacing.unit * 3,
-      left: 'auto',
-      right: 'auto',
-    },
+    marginBottom: theme.spacing.unit * 3,
   },
 
   right: {
-    margin: {
-      left: theme.spacing.unit * 3,
-    },
+    marginLeft: theme.spacing.unit * 3,
   },
 }))(Services);

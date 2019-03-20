@@ -26,7 +26,15 @@ class PageWithTabs extends Component {
     /**
      * @constant
      */
-    const { classes, description, image, link, tabs, title } = this.props;
+    const {
+      backgroundPosition,
+      classes,
+      description,
+      image,
+      link,
+      tabs,
+      title,
+    } = this.props;
     /**
      * @constant
      */
@@ -36,7 +44,10 @@ class PageWithTabs extends Component {
       <Fragment>
         <header
           className={classes.header}
-          style={{ backgroundImage: `url(${image})` }}
+          style={{
+            backgroundImage: `url(${image})`,
+            backgroundPosition: backgroundPosition || 'center',
+          }}
         >
           <div className={classes.header_content}>
             <Typography
@@ -84,6 +95,7 @@ class PageWithTabs extends Component {
 }
 
 PageWithTabs.propTypes = {
+  backgroundPosition: PropTypes.string,
   classes: PropTypes.objectOf(PropTypes.string).isRequired,
   description: PropTypes.string,
   image: PropTypes.string.isRequired,
@@ -98,6 +110,7 @@ PageWithTabs.propTypes = {
 };
 
 PageWithTabs.defaultProps = {
+  backgroundPosition: '',
   description: '',
   link: '',
 };
@@ -108,7 +121,6 @@ PageWithTabs.defaultProps = {
 export default withStyles((theme) => ({
   header: {
     background: {
-      position: 'center',
       size: 'cover',
     },
     padding: {
