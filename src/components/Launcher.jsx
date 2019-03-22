@@ -77,8 +77,6 @@ const Launcher = ({ classes, theme, updateView }) => (
       </Typography>
     </header>
     <Grid
-      alignContent="center"
-      alignItems="center"
       className={classes.grid}
       container
       justify="center"
@@ -245,7 +243,8 @@ export default connect(
         flex: {
           direction: 'column',
         },
-        padding: [[theme.spacing.unit * 3, 0]],
+        height: '100%',
+        padding: theme.spacing.unit * 3,
       },
 
       tile_icon: {

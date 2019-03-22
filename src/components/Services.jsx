@@ -18,8 +18,8 @@ import { Typography, withStyles } from '@material-ui/core';
 const Services = ({ classes }) => (
   <PageWithTabs
     description="
-      Our DXP provides best-of-breed modern digital technologies to delivery rich
-      and engaging user experiences.
+      Our DXP provides best-of-breed modern digital technologies and
+      accelerators to delivery rich and engaging user experiences.
     "
     image={hero}
     tabs={[
@@ -85,16 +85,6 @@ const Services = ({ classes }) => (
               <Button href="https://dmp-pepsico-dev.azurewebsites.net/admin/">
                 Launch Demo
               </Button>
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <p>B004TBLSKW,B009PTZW9Q,B009PTZVUQ,B004TBRSB0,B00RXIWRBW</p>
-              <Button href="https://dmp-smartads-dev.azureedge.net/democheetoscampaign">
-                Launch Site
-              </Button>
             </Typography>
           </div>
         ),
@@ -108,9 +98,6 @@ const Services = ({ classes }) => (
                 Snack2U had a challenge for us. Can we make it easier to reorder
                 products through our Snacks2 you ecommerce platform.
               </p>
-              <Button href="http://localhost/barcode-scanner/dist/">
-                Launch The Demo
-              </Button>
             </Typography>
             <img
               alt=""

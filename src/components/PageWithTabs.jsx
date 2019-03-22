@@ -1,6 +1,13 @@
 import PropTypes from 'prop-types';
 import React, { Component, Fragment } from 'react';
-import { Tab, Tabs, Typography, withStyles } from '@material-ui/core';
+import {
+  Tab,
+  Tabs,
+  Typography,
+  withStyles,
+  withWidth,
+} from '@material-ui/core';
+import { isWidthUp } from '@material-ui/core/withWidth';
 
 /**
  * @class
@@ -34,6 +41,7 @@ class PageWithTabs extends Component {
       link,
       tabs,
       title,
+      width,
     } = this.props;
     /**
      * @constant
@@ -71,12 +79,13 @@ class PageWithTabs extends Component {
           </div>
         </header>
         <Tabs
-          centered
+          centered={isWidthUp('md', width)}
           className={classes.tabs}
           indicatorColor="primary"
           onChange={this.onTabChange}
           textColor="primary"
           value={tabIndex}
+          variant={isWidthUp('md', width) ? 'standard' : 'scrollable'}
         >
           {tabs.map(({ label }) => (
             <Tab key={label} label={label} />
@@ -107,6 +116,7 @@ PageWithTabs.propTypes = {
     }).isRequired
   ).isRequired,
   title: PropTypes.string.isRequired,
+  width: PropTypes.string.isRequired,
 };
 
 PageWithTabs.defaultProps = {
@@ -170,4 +180,4 @@ export default withStyles((theme) => ({
       width: [[1, 0]],
     },
   },
-}))(PageWithTabs);
+}))(withWidth()(PageWithTabs));
