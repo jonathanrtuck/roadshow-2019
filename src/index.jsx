@@ -3,10 +3,8 @@ import { CssBaseline, MuiThemeProvider } from '@material-ui/core';
 import expand from 'jss-expand';
 import { jss } from 'react-jss';
 import JssProvider from 'react-jss/lib/JssProvider';
-import { Provider } from 'react-redux';
 import React from 'react';
 import { render } from 'react-dom';
-import store from 'store';
 import theme from 'theme';
 
 /**
@@ -20,9 +18,7 @@ render(
   <JssProvider jss={jss}>
     <MuiThemeProvider theme={theme}>
       <CssBaseline />
-      <Provider store={store}>
-        <App />
-      </Provider>
+      <App />
     </MuiThemeProvider>
   </JssProvider>,
   document.getElementById('root')

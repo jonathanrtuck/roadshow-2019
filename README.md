@@ -16,7 +16,8 @@ yarn
 yarn develop
 ```
 
-This will start a hot-reloading development environment accessible at [http://localhost:8080/](http://localhost:8080/).
+This will start a hot-reloading development environment accessible at
+[http://localhost:8080/](http://localhost:8080/).
 
 ## Deployment
 
@@ -24,4 +25,5 @@ This will start a hot-reloading development environment accessible at [http://lo
 yarn build
 ```
 
-This will perform an optimized production build. The contents of the `/dist` folder can then be deployed to the production server.
+This will perform an optimized production build. The contents of the `/dist`
+folder can then be deployed to the production server.

@@ -1,10 +1,8 @@
 import { AppBar, IconButton, Toolbar, withStyles } from '@material-ui/core';
-import { connect } from 'react-redux';
 import { faArrowLeft } from '@fortawesome/pro-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { VIEW_UPDATE } from 'store/action-types';
 
 /**
  * @constant
@@ -12,14 +10,14 @@ import { VIEW_UPDATE } from 'store/action-types';
  * @param {object} props
  * @returns {ReactElement}
  */
-const Header = ({ classes, updateView }) => (
+const Header = ({ classes, setView }) => (
   <AppBar className={classes.root} position="sticky">
     <Toolbar>
       <IconButton
         aria-label="Back"
         className={classes.iconButton}
         onClick={() => {
-          updateView('launcher');
+          setView('launcher');
         }}
       >
         <FontAwesomeIcon fixedWidth icon={faArrowLeft} />
@@ -30,31 +28,20 @@ const Header = ({ classes, updateView }) => (
 
 Header.propTypes = {
   classes: PropTypes.objectOf(PropTypes.string).isRequired,
-  updateView: PropTypes.func.isRequired,
+  setView: PropTypes.func.isRequired,
 };
 
 /**
  * @type {ReactElement}
  */
-export default connect(
-  null,
-  {
-    updateView: (value) => ({
-      payload: {
-        value,
-      },
-      type: VIEW_UPDATE,
-    }),
-  }
-)(
-  withStyles((theme) => ({
-    iconButton: {
-      width: 48,
+export default withStyles((theme) => ({
+  iconButton: {
+    height: 48,
+    width: 48,
+  },
+  root: {
+    background: {
+      color: theme.palette.background.default,
     },
-    root: {
-      background: {
-        color: theme.palette.background.default,
-      },
-    },
-  }))(Header)
-);
+  },
+}))(Header);

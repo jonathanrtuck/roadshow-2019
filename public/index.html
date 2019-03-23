@@ -4,15 +4,22 @@
     <meta charset="utf-8" />
     <meta content="width=device-width,initial-scale=1" name="viewport" />
     <title><%= htmlWebpackPlugin.options.title %></title>
-    <!--
-    <link
-      href="https://cdn.botframework.com/botframework-webchat/0.15.0/botchat.css"
-      rel="stylesheet"
-    />
-    -->
   </head>
   <body>
     <div id="root"></div>
-    <!--<script src="//cdn.mouseflow.com/projects/554e9702-12b7-4576-96b6-3a7af4937d55.js"></script>-->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-133168386-2"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      gtag('js', new Date());
+      gtag('config', 'UA-133168386-2');
+    </script>
   </body>
 </html>
