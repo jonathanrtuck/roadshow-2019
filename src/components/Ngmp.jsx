@@ -1,11 +1,12 @@
 import Button from 'components/Button';
+import Content from 'components/Content';
 import gcs from 'images/gcs.png';
 import hero from 'images/hero_profile_graphic.jpg';
 import ngmp from 'images/roadshow_mypepsicoNG_graphic.jpg';
 import PageWithTabs from 'components/PageWithTabs';
 import profile from 'images/profile_graphic.jpg';
 import PropTypes from 'prop-types';
-import React, { Fragment } from 'react';
+import React from 'react';
 import { withStyles } from '@material-ui/core';
 
 /**
@@ -24,9 +25,8 @@ const Ngmp = ({ classes }) => (
     image={hero}
     tabs={[
       {
-        alignMedia: 'left',
         content: (
-          <Fragment>
+          <Content alignMedia="right" media={ngmp}>
             <p>
               We have redesigned the MyPepsiCo intranet portal with a renewed
               focus on simplified content creation and better content
@@ -43,15 +43,13 @@ const Ngmp = ({ classes }) => (
                 roll out MyPepsiCo Next Gen to all associates in 2019
               </li>
             </ul>
-          </Fragment>
+          </Content>
         ),
         label: 'Next Gen MyPepsiCo',
-        media: ngmp,
       },
       {
-        alignMedia: 'right',
         content: (
-          <Fragment>
+          <Content alignMedia="right" media={gcs}>
             <p>
               To continue the play on better content findability through search
               we are upgrading to Google Cloud Search, which brings Google’s
@@ -70,15 +68,13 @@ const Ngmp = ({ classes }) => (
             >
               Launch The Demo
             </Button>
-          </Fragment>
+          </Content>
         ),
         label: 'Next Gen Search',
-        media: gcs,
       },
       {
-        alignMedia: 'left',
         content: (
-          <Fragment>
+          <Content alignMedia="left" media={profile}>
             <p>
               We started with research and understanding, competitive analysis,
               broad user surveys, and a design thinking workshop where our
@@ -99,10 +95,15 @@ const Ngmp = ({ classes }) => (
               </li>
               <li>Coming Q3 2019</li>
             </ul>
-          </Fragment>
+            <Button
+              className={classes.button}
+              href="https://projects.invisionapp.com/share/YEQMZMADKNR#/screens/348095923_My_Profile_-_Profile"
+            >
+              Launch The Demo
+            </Button>
+          </Content>
         ),
         label: 'Next Gen User Profiles',
-        media: profile,
       },
     ]}
     title="Next Gen Employee Experience"

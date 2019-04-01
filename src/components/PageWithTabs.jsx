@@ -1,4 +1,3 @@
-import classnames from 'classnames';
 import { isWidthUp } from '@material-ui/core/withWidth';
 import PropTypes from 'prop-types';
 import React, { Fragment, useState } from 'react';
@@ -73,19 +72,8 @@ const PageWithTabs = ({
           <Tab key={label} label={label} />
         ))}
       </Tabs>
-      {tabs.map(({ alignMedia, content, label, media }, i) =>
-        tabIndex === i ? (
-          <section className={classes.section} key={label}>
-            <img
-              alt=""
-              className={classnames(classes[alignMedia], classes.media)}
-              src={media}
-            />
-            <Typography component="div" variant="body1">
-              {content}
-            </Typography>
-          </section>
-        ) : null
+      {tabs.map(({ content, label }, i) =>
+        tabIndex === i ? <section key={label}>{content}</section> : null
       )}
     </Fragment>
   );
@@ -98,12 +86,10 @@ PageWithTabs.propTypes = {
   link: PropTypes.string,
   tabs: PropTypes.arrayOf(
     PropTypes.shape({
-      alignMedia: PropTypes.oneOf(['left', 'right']).isRequired,
       content: PropTypes.oneOfType([
         PropTypes.arrayOf(PropTypes.node),
         PropTypes.node,
       ]).isRequired,
-      media: PropTypes.string.isRequired,
       label: PropTypes.string.isRequired,
     }).isRequired
   ).isRequired,
@@ -148,49 +134,6 @@ export default withStyles((theme) => ({
   header_description: {
     margin: {
       top: theme.spacing.unit * 4,
-    },
-  },
-
-  left: {
-    marginRight: theme.spacing.unit * 3,
-  },
-
-  media: {
-    display: 'block',
-    flex: {
-      grow: 0,
-      shrink: 0,
-    },
-    marginBottom: theme.spacing.unit * 3,
-    maxWidth: '100%',
-  },
-
-  right: {
-    marginLeft: theme.spacing.unit * 3,
-
-    [theme.breakpoints.up('md')]: {
-      order: 2,
-    },
-  },
-
-  section: {
-    alignItems: 'center',
-    display: 'flex',
-    flex: {
-      direction: 'column',
-    },
-    padding: theme.spacing.unit * 4,
-
-    [theme.breakpoints.up('md')]: {
-      alignItems: 'flex-start',
-      flex: {
-        direction: 'row',
-      },
-      margin: {
-        left: 'auto',
-        right: 'auto',
-      },
-      width: theme.breakpoints.values.md,
     },
   },
 

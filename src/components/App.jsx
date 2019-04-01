@@ -1,6 +1,11 @@
+import Analytics from 'components/Analytics';
 import dxpIcon from 'images/dx.png';
 import DXP from 'components/DXP';
-import { faComment, faIdCard } from '@fortawesome/pro-solid-svg-icons';
+import {
+  faAnalytics,
+  faComment,
+  faIdCard,
+} from '@fortawesome/pro-solid-svg-icons';
 import Header from 'components/Header';
 import Launcher from 'components/Launcher';
 import Ngmp from 'components/Ngmp';
@@ -24,6 +29,12 @@ const sections = [
     icon: dxpIcon,
     id: 'services',
     label: 'Next Gen<br />Digital Experience Platform',
+  },
+  {
+    Component: Analytics,
+    icon: faAnalytics,
+    id: 'analytics',
+    label: 'Usage Analysis',
   },
   {
     href:

@@ -1,11 +1,15 @@
 import accelerate from 'images/roadshow_DXP_graphic_1.png';
+import bubly from 'images/bubly.png';
 import Button from 'components/Button';
+import Content from 'components/Content';
+import de from 'images/de.png';
 import generator from 'images/roadshow_campaign_graphic.jpg';
 import hero from 'images/roadshow_dxp_graphic_2.jpg';
 import PageWithTabs from 'components/PageWithTabs';
 import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
-import snacks from 'images/roadshow_snacks2you_graphic.jpg';
+import smartfood from 'images/smartfood.png';
+// import snacks from 'images/roadshow_snacks2you_graphic.jpg';
 import { withStyles } from '@material-ui/core';
 
 /**
@@ -23,9 +27,30 @@ const Services = ({ classes }) => (
     image={hero}
     tabs={[
       {
-        alignMedia: 'right',
         content: (
           <Fragment>
+            <Content alignMedia="left" media={bubly}>
+              <Button href="https://dmp-bubly-dev.azurewebsites.net/">
+                Launch Site
+              </Button>
+            </Content>
+            <Content alignMedia="left" media={smartfood}>
+              <Button href="https://dmp-smartfood-dev.azurewebsites.net/">
+                Launch Site
+              </Button>
+            </Content>
+            <Content alignMedia="left" media={de}>
+              <Button href="https://dmp-pepsico-dev.azurewebsites.net/">
+                Launch Site
+              </Button>
+            </Content>
+          </Fragment>
+        ),
+        label: 'Engaging Solutions',
+      },
+      {
+        content: (
+          <Content alignMedia="right" media={accelerate}>
             <p>
               We’re accelerating the design, development, and delivery of DX
               solutions, while reducing costs and increasing quality.
@@ -37,15 +62,13 @@ const Services = ({ classes }) => (
               <li>Automation</li>
               <li>Self Service</li>
             </ul>
-          </Fragment>
+          </Content>
         ),
         label: 'Accelerate',
-        media: accelerate,
       },
       {
-        alignMedia: 'left',
         content: (
-          <Fragment>
+          <Content alignMedia="left" media={generator}>
             <p>
               New social platforms and changing consumer behaviors are requiring
               PepsiCo marketers to be more nimble. They are developing
@@ -77,24 +100,39 @@ const Services = ({ classes }) => (
             >
               Launch Demo
             </Button>
-          </Fragment>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <p>B004TBLSKW,B009PTZW9Q,B009PTZVUQ,B004TBRSB0,B00RXIWRBW</p>
+            <Button href="https://dmp-smartads-dev.azureedge.net/democheetoscampaign">
+              Launch Site
+            </Button>
+          </Content>
         ),
         label: 'Self-Service Campaign Generator',
-        media: generator,
       },
+      /*
       {
-        alignMedia: 'right',
         content: (
-          <Fragment>
+          <Content alignMedia="right" media={snacks}>
             <p>
               Snack2U had a challenge for us. Can we make it easier to reorder
               products through our Snacks2 you ecommerce platform.
             </p>
-          </Fragment>
+            <Button
+              className={classes.button}
+              href="http://localhost/barcode-scanner/dist/"
+            >
+              Launch The Demo
+            </Button>
+          </Content>
         ),
         label: 'Snack2U Mobile Ordering',
-        media: snacks,
       },
+      */
     ]}
     title="Digital Experience Platform (DXP)"
   />
