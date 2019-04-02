@@ -5,11 +5,12 @@ import Content from 'components/Content';
 import de from 'images/de.png';
 import generator from 'images/roadshow_campaign_graphic.jpg';
 import hero from 'images/roadshow_dxp_graphic_2.jpg';
+import kurkure from 'images/kurkure.png';
 import PageWithTabs from 'components/PageWithTabs';
 import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
 import smartfood from 'images/smartfood.png';
-// import snacks from 'images/roadshow_snacks2you_graphic.jpg';
+import snacks from 'images/roadshow_snacks2you_graphic.jpg';
 import { withStyles } from '@material-ui/core';
 
 /**
@@ -41,6 +42,11 @@ const Services = ({ classes }) => (
             </Content>
             <Content alignMedia="left" media={de}>
               <Button href="https://dmp-pepsico-dev.azurewebsites.net/">
+                Launch Site
+              </Button>
+            </Content>
+            <Content alignMedia="left" media={kurkure}>
+              <Button href="https://dmp-smartads-dev.azureedge.net/kurkure-demo/">
                 Launch Site
               </Button>
             </Content>
@@ -114,7 +120,6 @@ const Services = ({ classes }) => (
         ),
         label: 'Self-Service Campaign Generator',
       },
-      /*
       {
         content: (
           <Content alignMedia="right" media={snacks}>
@@ -124,7 +129,7 @@ const Services = ({ classes }) => (
             </p>
             <Button
               className={classes.button}
-              href="http://localhost/barcode-scanner/dist/"
+              href="https://portal2.ite.mypepsico.com/ep/jonathan/camera/"
             >
               Launch The Demo
             </Button>
@@ -132,7 +137,6 @@ const Services = ({ classes }) => (
         ),
         label: 'Snack2U Mobile Ordering',
       },
-      */
     ]}
     title="Digital Experience Platform (DXP)"
   />

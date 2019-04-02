@@ -17,14 +17,23 @@ import { withStyles } from '@material-ui/core';
 const Analytics = ({ classes }) => (
   <PageWithTabs
     description="
-      Something about analytics…
+      Understanding your audience is the key to growing your audience and
+      maximizing the value of your site. This process is a journey of learning,
+      tweaking, and targeting users to influence their behavior. Comprehensive
+      metrics including usages and interaction data along with user demographics
+      give insights into how successful your site is and how you can improve it.
     "
     image={background}
     tabs={[
       {
         content: (
           <Content alignMedia="right" media={ga}>
-            <p>Something about analytics…</p>
+            <p>
+              Google Analytics makes it easy to understand how your site users
+              are engaging with your content, so you know what’s working and
+              what’s not. See how people are interacting with your sites by
+              viewing robust reports and dashboards.
+            </p>
             <Button
               className={classes.button}
               href="https://analytics.google.com/analytics/web/?authuser=1#/report-home/a133168386w197151714p192068025"
@@ -33,40 +42,24 @@ const Analytics = ({ classes }) => (
             </Button>
           </Content>
         ),
-        label: 'Google Analytics…',
+        label: 'Google Analytics',
       },
       {
         content: (
           <Content alignMedia="left" media={recording}>
-            <p>Something about recording…</p>
+            <p>
+              Lets you replay the full visitor experience to identify pain
+              points, boost conversions, and optimize your site.
+            </p>
             <Button className={classes.button} href="http://mouseflow.com">
               Launch Site
             </Button>
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <p>
-              ben@base22.com
-              <br />
-              22cupsofcoffee
-            </p>
           </Content>
         ),
-        label: 'Mouseflow…',
+        label: 'User Session Recording',
       },
     ]}
-    title="Usage Analytics…"
+    title="User Usage Metrics and Insights"
   />
 );
 

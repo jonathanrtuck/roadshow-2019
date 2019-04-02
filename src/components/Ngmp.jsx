@@ -26,7 +26,7 @@ const Ngmp = ({ classes }) => (
     tabs={[
       {
         content: (
-          <Content alignMedia="right" media={ngmp}>
+          <Content alignMedia="left" media={ngmp}>
             <p>
               We have redesigned the MyPepsiCo intranet portal with a renewed
               focus on simplified content creation and better content
